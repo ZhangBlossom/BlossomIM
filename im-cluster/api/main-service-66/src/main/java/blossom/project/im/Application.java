@@ -11,8 +11,8 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
  */
 @SpringBootApplication
 @EnableDiscoveryClient  // 开启服务的注册和发现功能
-@MapperScan(basePackages = "blossom.project.mapper")
-@EnableFeignClients("blossom.project.api.feign")
+@MapperScan(basePackages = "blossom.project.im.mapper")
+@EnableFeignClients("blossom.project.im.api.feign")
 public class Application {
 
     public static void main(String[] args) {

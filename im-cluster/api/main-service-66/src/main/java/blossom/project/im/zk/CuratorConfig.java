@@ -1,5 +1,8 @@
 package blossom.project.im.zk;
 
+import blossom.project.im.base.BaseInfoProperties;
+import blossom.project.im.netty.NettyServerNode;
+import blossom.project.im.utils.JsonUtils;
 import jakarta.annotation.Resource;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
@@ -9,9 +12,6 @@ import org.apache.curator.framework.CuratorFrameworkFactory;
 import org.apache.curator.framework.recipes.cache.CuratorCache;
 import org.apache.curator.framework.recipes.cache.CuratorCacheListener;
 import org.apache.curator.retry.ExponentialBackoffRetry;
-import blossom.project.base.BaseInfoProperties;
-import blossom.project.pojo.netty.NettyServerNode;
-import blossom.project.utils.JsonUtils;
 import org.springframework.amqp.rabbit.core.RabbitAdmin;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,13 +1,14 @@
 package blossom.project.im.controller;
 
+import blossom.project.im.Friendship;
+import blossom.project.im.base.BaseInfoProperties;
+import blossom.project.im.enums.YesOrNo;
+import blossom.project.im.grace.result.GraceJSONResult;
 import jakarta.annotation.Resource;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
-import blossom.project.base.BaseInfoProperties;
-import blossom.project.enums.YesOrNo;
-import blossom.project.grace.result.GraceJSONResult;
-import blossom.project.pojo.Friendship;
+
 import blossom.project.im.service.FriendshipService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;

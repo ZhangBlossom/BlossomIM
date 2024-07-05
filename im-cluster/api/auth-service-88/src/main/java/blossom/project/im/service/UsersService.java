@@ -1,7 +1,7 @@
 package blossom.project.im.service;
 
-import com.baomidou.mybatisplus.extension.service.IService;
-import blossom.project.pojo.Users;
+
+import blossom.project.im.Users;
 
 /**
  * <p>

@@ -1,10 +1,11 @@
 package blossom.project.im.rabbitmq;
 
+import blossom.project.im.netty.ChatMsg;
+import blossom.project.im.service.ChatMessageService;
+import blossom.project.im.utils.JsonUtils;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
-import blossom.project.pojo.netty.ChatMsg;
-import blossom.project.im.service.ChatMessageService;
-import blossom.project.utils.JsonUtils;
+
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;

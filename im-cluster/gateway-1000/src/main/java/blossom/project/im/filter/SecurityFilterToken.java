@@ -1,10 +1,11 @@
 package blossom.project.im.filter;
 
+import blossom.project.im.base.BaseInfoProperties;
+import blossom.project.im.grace.result.ResponseStatusEnum;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
+
 import org.apache.commons.lang3.StringUtils;
-import blossom.project.base.BaseInfoProperties;
-import blossom.project.grace.result.ResponseStatusEnum;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.cloud.gateway.filter.GlobalFilter;
 import org.springframework.core.Ordered;
@@ -53,7 +54,9 @@ public class SecurityFilterToken extends BaseInfoProperties implements GlobalFil
         String fileStart = excludeUrlProperties.getFileStart();
         if (StringUtils.isNotBlank(fileStart)) {
             boolean matchFileStart = antPathMatcher.matchStart(fileStart, url);
-            if (matchFileStart) return chain.filter(exchange);
+            if (matchFileStart) {
+                return chain.filter(exchange);
+            }
         }
 
         // 4. 代码到达此处，表示请求被拦截，需要进行校验

@@ -1,11 +1,10 @@
 package blossom.project.im.service;
 
-import blossom.project.enums.YesOrNo;
-import blossom.project.pojo.Friendship;
-import blossom.project.pojo.vo.ContactsVO;
+import blossom.project.im.Friendship;
+import blossom.project.im.enums.YesOrNo;
+import blossom.project.im.vo.ContactsVO;
 
 import java.util.List;
-
 
 public interface FriendshipService {
 

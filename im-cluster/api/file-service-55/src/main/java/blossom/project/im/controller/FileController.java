@@ -2,18 +2,19 @@ package blossom.project.im.controller;
 
 import blossom.project.im.MinIOConfig;
 import blossom.project.im.MinIOUtils;
+import blossom.project.im.exceptions.GraceException;
+import blossom.project.im.grace.result.GraceJSONResult;
+import blossom.project.im.grace.result.ResponseStatusEnum;
+import blossom.project.im.utils.JcodecVideoUtil;
+import blossom.project.im.utils.JsonUtils;
+import blossom.project.im.utils.QrCodeUtils;
+import blossom.project.im.vo.UsersVO;
+import blossom.project.im.vo.VideoMsgVO;
 import jakarta.annotation.Resource;
 import jakarta.servlet.http.HttpServletRequest;
 import org.apache.commons.lang3.StringUtils;
 import blossom.project.im.api.feign.UserInfoMicroServiceFeign;
-import blossom.project.exceptions.GraceException;
-import blossom.project.grace.result.GraceJSONResult;
-import blossom.project.grace.result.ResponseStatusEnum;
-import blossom.project.pojo.vo.UsersVO;
-import blossom.project.pojo.vo.VideoMsgVO;
-import blossom.project.im.utils.JcodecVideoUtil;
-import blossom.project.utils.JsonUtils;
-import blossom.project.utils.QrCodeUtils;
+
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -32,8 +33,8 @@ public class FileController {
 
     @PostMapping("uploadFace1")
     public GraceJSONResult uploadFace1(@RequestParam("file") MultipartFile file,
-                                 String userId,
-                                 HttpServletRequest request) throws Exception {
+                                       String userId,
+                                       HttpServletRequest request) throws Exception {
 
         // abc.123.456.png
         String filename = file.getOriginalFilename();   // 获得文件原始名称

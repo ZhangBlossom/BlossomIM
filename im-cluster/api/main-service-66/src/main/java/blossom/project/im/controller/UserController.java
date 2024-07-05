@@ -1,14 +1,14 @@
 package blossom.project.im.controller;
 
+import blossom.project.im.Users;
+import blossom.project.im.base.BaseInfoProperties;
+import blossom.project.im.bo.ModifyUserBO;
+import blossom.project.im.grace.result.GraceJSONResult;
+import blossom.project.im.grace.result.ResponseStatusEnum;
+import blossom.project.im.vo.UsersVO;
 import jakarta.annotation.Resource;
 import jakarta.servlet.http.HttpServletRequest;
 import org.apache.commons.lang3.StringUtils;
-import blossom.project.base.BaseInfoProperties;
-import blossom.project.grace.result.GraceJSONResult;
-import blossom.project.grace.result.ResponseStatusEnum;
-import blossom.project.pojo.Users;
-import blossom.project.pojo.bo.ModifyUserBO;
-import blossom.project.pojo.vo.UsersVO;
 import blossom.project.im.service.UsersService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.web.bind.annotation.*;

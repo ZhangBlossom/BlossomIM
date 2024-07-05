@@ -1,12 +1,11 @@
 package blossom.project.im.service;
 
-import blossom.project.pojo.FriendCircleLiked;
-import blossom.project.pojo.bo.FriendCircleBO;
-import blossom.project.utils.PagedGridResult;
-import org.springframework.web.bind.annotation.RequestParam;
+
+import blossom.project.im.FriendCircleLiked;
+import blossom.project.im.bo.FriendCircleBO;
+import blossom.project.im.utils.PagedGridResult;
 
 import java.util.List;
-
 
 public interface FriendCircleService {
 

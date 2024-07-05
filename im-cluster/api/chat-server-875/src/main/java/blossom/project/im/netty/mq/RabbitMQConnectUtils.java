@@ -2,7 +2,7 @@ package blossom.project.im.netty.mq;
 
 import blossom.project.im.netty.websocket.UserChannelSession;
 import com.rabbitmq.client.*;
-import blossom.project.pojo.netty.DataContent;
+import blossom.project.im.pojo.netty.DataContent;
 import blossom.project.utils.JsonUtils;
 
 import java.io.IOException;

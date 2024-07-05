@@ -1,10 +1,10 @@
 package blossom.project.im.controller;
 
+import blossom.project.im.utils.MyInfo;
+import blossom.project.im.utils.SMSUtils;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import blossom.project.im.tasks.SMSTask;
-import blossom.project.utils.MyInfo;
-import blossom.project.utils.SMSUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

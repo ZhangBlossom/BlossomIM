@@ -1,9 +1,9 @@
 package blossom.project.im.mapper;
 
+import blossom.project.im.vo.ContactsVO;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Param;
-import blossom.project.pojo.Friendship;
-import blossom.project.pojo.vo.ContactsVO;
+
 
 import java.util.List;
 import java.util.Map;

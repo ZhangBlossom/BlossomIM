@@ -11,7 +11,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
  */
 @SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
 @EnableDiscoveryClient  // 开启服务的注册和发现功能
-@EnableFeignClients("blossom.project.api.feign")
+@EnableFeignClients("blossom.project.im.api.feign")
 public class Application {
 
     public static void main(String[] args) {

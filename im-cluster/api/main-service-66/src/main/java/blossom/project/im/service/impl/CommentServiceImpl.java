@@ -1,16 +1,16 @@
 package blossom.project.im.service.impl;
 
-import blossom.project.im.service.CommentService;
-import blossom.project.im.service.UsersService;
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import jakarta.annotation.Resource;
-import blossom.project.base.BaseInfoProperties;
+import blossom.project.im.Comment;
+import blossom.project.im.Users;
+import blossom.project.im.base.BaseInfoProperties;
+import blossom.project.im.bo.CommentBO;
 import blossom.project.im.mapper.CommentMapper;
 import blossom.project.im.mapper.CommentMapperCustom;
-import blossom.project.pojo.Comment;
-import blossom.project.pojo.Users;
-import blossom.project.pojo.bo.CommentBO;
-import blossom.project.pojo.vo.CommentVO;
+import blossom.project.im.service.CommentService;
+import blossom.project.im.service.UsersService;
+import blossom.project.im.vo.CommentVO;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import jakarta.annotation.Resource;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

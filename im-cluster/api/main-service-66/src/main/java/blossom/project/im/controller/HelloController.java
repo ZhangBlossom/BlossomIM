@@ -1,9 +1,10 @@
 package blossom.project.im.controller;
 
-import jakarta.annotation.Resource;
-import blossom.project.pojo.netty.ChatMsg;
+
+import blossom.project.im.netty.ChatMsg;
 import blossom.project.im.rabbitmq.RabbitMQTestConfig;
-import blossom.project.utils.JsonUtils;
+import blossom.project.im.utils.JsonUtils;
+import jakarta.annotation.Resource;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -1,10 +1,10 @@
 package blossom.project.im.mapper;
 
+import blossom.project.im.vo.NewFriendsVO;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.apache.ibatis.annotations.Param;
-import blossom.project.pojo.FriendRequest;
-import blossom.project.pojo.vo.NewFriendsVO;
+
 
 import java.util.Map;
 

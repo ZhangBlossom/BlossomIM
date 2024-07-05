@@ -1,19 +1,16 @@
 package blossom.project.im.service.impl;
 
+import blossom.project.im.Users;
+import blossom.project.im.base.BaseInfoProperties;
+import blossom.project.im.bo.ModifyUserBO;
+import blossom.project.im.exceptions.GraceException;
+import blossom.project.im.grace.result.ResponseStatusEnum;
+import blossom.project.im.mapper.UsersMapper;
 import blossom.project.im.service.UsersService;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import jakarta.annotation.Resource;
 import org.apache.commons.lang3.StringUtils;
 import blossom.project.im.api.feign.FileMicroServiceFeign;
-import blossom.project.base.BaseInfoProperties;
-import blossom.project.enums.Sex;
-import blossom.project.exceptions.GraceException;
-import blossom.project.grace.result.ResponseStatusEnum;
-import blossom.project.im.mapper.UsersMapper;
-import blossom.project.pojo.Users;
-import blossom.project.pojo.bo.ModifyUserBO;
-import blossom.project.utils.DesensitizationUtil;
-import blossom.project.utils.LocalDateUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -43,8 +40,9 @@ public class UsersServiceImpl extends BaseInfoProperties implements UsersService
         String wechatNum = userBO.getWechatNum();
         String userId = userBO.getUserId();
 
-        if (StringUtils.isBlank(userId))
+        if (StringUtils.isBlank(userId)) {
             GraceException.display(ResponseStatusEnum.USER_INFO_UPDATED_ERROR);
+        }
 
         if (StringUtils.isNotBlank(wechatNum)) {
             String isExist = redis.get(REDIS_USER_ALREADY_UPDATE_WECHAT_NUM + ":" + userId);

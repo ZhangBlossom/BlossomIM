@@ -1,6 +1,7 @@
 package blossom.project.im.controller;
 
-import blossom.project.base.BaseInfoProperties;
+
+import blossom.project.im.base.BaseInfoProperties;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

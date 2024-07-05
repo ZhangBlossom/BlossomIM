@@ -1,14 +1,15 @@
 package blossom.project.im.service.impl;
 
+import blossom.project.im.ChatMessage;
+import blossom.project.im.base.BaseInfoProperties;
+import blossom.project.im.mapper.ChatMessageMapper;
+import blossom.project.im.netty.ChatMsg;
 import blossom.project.im.service.ChatMessageService;
+import blossom.project.im.utils.PagedGridResult;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+
 import jakarta.annotation.Resource;
-import blossom.project.base.BaseInfoProperties;
-import blossom.project.im.mapper.ChatMessageMapper;
-import blossom.project.pojo.ChatMessage;
-import blossom.project.pojo.netty.ChatMsg;
-import blossom.project.utils.PagedGridResult;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

@@ -1,7 +1,8 @@
 package blossom.project.im.mapper;
 
+import blossom.project.im.vo.CommentVO;
 import org.apache.ibatis.annotations.Param;
-import blossom.project.pojo.vo.CommentVO;
+
 
 import java.util.List;
 import java.util.Map;

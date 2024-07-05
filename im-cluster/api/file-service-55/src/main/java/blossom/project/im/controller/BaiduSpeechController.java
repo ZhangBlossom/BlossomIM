@@ -3,7 +3,7 @@ package blossom.project.im.controller;
 import com.baidu.aip.speech.AipSpeech;
 import javazoom.spi.mpeg.sampled.file.MpegAudioFileReader;
 import org.apache.commons.io.IOUtils;
-import blossom.project.grace.result.GraceJSONResult;
+import blossom.project.im.grace.result.GraceJSONResult;
 import blossom.project.im.utils.BaiduAISDK;
 import org.json.JSONArray;
 import org.json.JSONObject;

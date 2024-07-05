@@ -1,7 +1,8 @@
 package blossom.project.im.service;
 
-import blossom.project.pojo.Users;
-import blossom.project.pojo.bo.ModifyUserBO;
+
+import blossom.project.im.Users;
+import blossom.project.im.bo.ModifyUserBO;
 
 /**
  * <p>

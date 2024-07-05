@@ -1,10 +1,7 @@
 package blossom.project.im.service;
 
-import blossom.project.pojo.Users;
-import blossom.project.pojo.bo.ModifyUserBO;
-import blossom.project.pojo.bo.NewFriendRequestBO;
-import blossom.project.utils.PagedGridResult;
-import org.springframework.web.bind.annotation.RequestParam;
+import blossom.project.im.bo.NewFriendRequestBO;
+import blossom.project.im.utils.PagedGridResult;
 
 /**
  * <p>

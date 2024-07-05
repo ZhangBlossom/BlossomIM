@@ -1,7 +1,8 @@
 package blossom.project.im.service;
 
-import blossom.project.pojo.netty.ChatMsg;
-import blossom.project.utils.PagedGridResult;
+
+import blossom.project.im.netty.ChatMsg;
+import blossom.project.im.utils.PagedGridResult;
 import org.springframework.web.bind.annotation.PathVariable;
 
 public interface ChatMessageService {

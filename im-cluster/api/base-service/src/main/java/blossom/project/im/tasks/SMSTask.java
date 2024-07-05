@@ -1,8 +1,8 @@
 package blossom.project.im.tasks;
 
+import blossom.project.im.utils.SMSUtils;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
-import blossom.project.utils.SMSUtils;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
 

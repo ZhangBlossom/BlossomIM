@@ -1,7 +1,9 @@
 package blossom.project.im.service;
 
-import blossom.project.pojo.bo.CommentBO;
-import blossom.project.pojo.vo.CommentVO;
+
+import blossom.project.im.bo.CommentBO;
+import blossom.project.im.vo.CommentVO;
+
 
 import java.util.List;
 

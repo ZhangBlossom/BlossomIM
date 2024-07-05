@@ -1,6 +1,6 @@
 package blossom.project.im.api.feign;
 
-import blossom.project.grace.result.GraceJSONResult;
+import blossom.project.im.grace.result.GraceJSONResult;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;

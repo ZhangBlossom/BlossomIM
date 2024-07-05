@@ -1,7 +1,14 @@
 package blossom.project.im.netty.websocket;
 
+import blossom.project.im.enums.MsgTypeEnum;
+import blossom.project.im.netty.ChatMsg;
+import blossom.project.im.netty.DataContent;
+import blossom.project.im.netty.NettyServerNode;
 import blossom.project.im.netty.utils.JedisPoolUtils;
 import blossom.project.im.netty.utils.ZookeeperRegister;
+import blossom.project.im.utils.JsonUtils;
+import blossom.project.im.utils.LocalDateUtils;
+import blossom.project.im.utils.OkHttpUtil;
 import com.a3test.component.idworker.IdWorkerConfigBean;
 import com.a3test.component.idworker.Snowflake;
 import com.baomidou.mybatisplus.core.toolkit.IdWorker;
@@ -13,18 +20,14 @@ import io.netty.channel.group.ChannelGroup;
 import io.netty.channel.group.DefaultChannelGroup;
 import io.netty.handler.codec.http.websocketx.TextWebSocketFrame;
 import io.netty.util.concurrent.GlobalEventExecutor;
-import blossom.project.enums.MsgTypeEnum;
-import blossom.project.grace.result.GraceJSONResult;
+
+import blossom.project.im.grace.result.GraceJSONResult;
 import blossom.project.im.netty.mq.MessagePublisher;
-import blossom.project.pojo.netty.ChatMsg;
-import blossom.project.pojo.netty.DataContent;
-import blossom.project.pojo.netty.NettyServerNode;
-import blossom.project.utils.JsonUtils;
-import blossom.project.utils.LocalDateUtils;
-import blossom.project.utils.OkHttpUtil;
 import redis.clients.jedis.Jedis;
 
+
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 /**
  * 创建自定义助手类
@@ -81,7 +84,7 @@ public class ChatHandler extends SimpleChannelInboundHandler<TextWebSocketFrame>
         // System.out.println("客户端currentChannelIdShort：" + currentChannelIdShort);
 
         // 2. 判断消息类型，根据不同的类型来处理不同的业务
-        if (msgType == MsgTypeEnum.CONNECT_INIT.type) {
+        if (Objects.equals(msgType, MsgTypeEnum.CONNECT_INIT.type)) {
             // 当websocket初次open的时候，初始化channel，把channel和用户userid关联起来
             UserChannelSession.putMultiChannels(senderId, currentChannel);
             UserChannelSession.putUserChannelIdRelation(currentChannelId, senderId);
@@ -95,10 +98,10 @@ public class ChatHandler extends SimpleChannelInboundHandler<TextWebSocketFrame>
             Jedis jedis = JedisPoolUtils.getJedis();
             jedis.set(senderId, JsonUtils.objectToJson(minNode));
 
-        } else if (msgType == MsgTypeEnum.WORDS.type
-                || msgType == MsgTypeEnum.IMAGE.type
-                || msgType == MsgTypeEnum.VIDEO.type
-                || msgType == MsgTypeEnum.VOICE.type
+        } else if (Objects.equals(msgType, MsgTypeEnum.WORDS.type)
+                || Objects.equals(msgType, MsgTypeEnum.IMAGE.type)
+                || Objects.equals(msgType, MsgTypeEnum.VIDEO.type)
+                || Objects.equals(msgType, MsgTypeEnum.VOICE.type)
         ) {
 
             // 此处为mq异步解耦，保存信息到数据库，数据库无法获得信息的主键id，
@@ -121,7 +124,7 @@ public class ChatHandler extends SimpleChannelInboundHandler<TextWebSocketFrame>
             // } else {
             //     chatMsg.setIsReceiverOnLine(true);
 
-                if (msgType == MsgTypeEnum.VOICE.type) {
+                if (Objects.equals(msgType, MsgTypeEnum.VOICE.type)) {
                     chatMsg.setIsRead(false);
                 }
                 dataContent.setChatMsg(chatMsg);

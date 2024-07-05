@@ -1,16 +1,17 @@
 package blossom.project.im.service.impl;
 
+import blossom.project.im.Users;
+import blossom.project.im.api.feign.FileMicroServiceFeign;
+import blossom.project.im.base.BaseInfoProperties;
+import blossom.project.im.enums.Sex;
+import blossom.project.im.mapper.UsersMapper;
+import blossom.project.im.service.UsersService;
+import blossom.project.im.utils.DesensitizationUtil;
+import blossom.project.im.utils.LocalDateUtils;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import jakarta.annotation.Resource;
 import org.apache.commons.lang3.StringUtils;
-import blossom.project.im.api.feign.FileMicroServiceFeign;
-import blossom.project.base.BaseInfoProperties;
-import blossom.project.enums.Sex;
-import blossom.project.im.mapper.UsersMapper;
-import blossom.project.pojo.Users;
-import blossom.project.im.service.UsersService;
-import blossom.project.utils.DesensitizationUtil;
-import blossom.project.utils.LocalDateUtils;
+
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

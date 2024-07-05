@@ -1,10 +1,8 @@
 package blossom.project.im.netty.mq;
 
-import com.rabbitmq.client.Channel;
-import com.rabbitmq.client.Connection;
-import com.rabbitmq.client.ConnectionFactory;
-import blossom.project.pojo.netty.ChatMsg;
-import blossom.project.utils.JsonUtils;
+
+import blossom.project.im.netty.ChatMsg;
+import blossom.project.im.utils.JsonUtils;
 
 public class MessagePublisher {
 

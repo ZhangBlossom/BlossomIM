@@ -1,14 +1,15 @@
 package blossom.project.im.controller;
 
+import blossom.project.im.base.BaseInfoProperties;
+import blossom.project.im.bo.NewFriendRequestBO;
+import blossom.project.im.grace.result.GraceJSONResult;
+import blossom.project.im.service.FriendRequestService;
+import blossom.project.im.utils.PagedGridResult;
 import jakarta.annotation.Resource;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
-import blossom.project.base.BaseInfoProperties;
-import blossom.project.grace.result.GraceJSONResult;
-import blossom.project.pojo.bo.NewFriendRequestBO;
-import blossom.project.im.service.FriendRequestService;
-import blossom.project.utils.PagedGridResult;
+
 import org.springframework.web.bind.annotation.*;
 
 /**

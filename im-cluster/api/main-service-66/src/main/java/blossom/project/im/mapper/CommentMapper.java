@@ -1,7 +1,8 @@
 package blossom.project.im.mapper;
 
+
+import blossom.project.im.Comment;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import blossom.project.pojo.Comment;
 
 /**
  * <p>

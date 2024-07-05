@@ -1,21 +1,17 @@
 package blossom.project.im.service.impl;
 
-import blossom.project.im.service.FriendshipService;
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import jakarta.annotation.Resource;
-import blossom.project.base.BaseInfoProperties;
-import blossom.project.enums.FriendRequestVerifyStatus;
-import blossom.project.enums.YesOrNo;
+import blossom.project.im.FriendRequest;
+import blossom.project.im.Friendship;
+import blossom.project.im.base.BaseInfoProperties;
+import blossom.project.im.enums.YesOrNo;
 import blossom.project.im.mapper.FriendshipMapper;
 import blossom.project.im.mapper.FriendshipMapperCustom;
-import blossom.project.pojo.FriendRequest;
-import blossom.project.pojo.Friendship;
-import blossom.project.pojo.bo.NewFriendRequestBO;
-import blossom.project.pojo.vo.ContactsVO;
-import blossom.project.pojo.vo.NewFriendsVO;
-import blossom.project.utils.PagedGridResult;
-import org.springframework.beans.BeanUtils;
+import blossom.project.im.service.FriendshipService;
+import blossom.project.im.vo.ContactsVO;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+
+import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
