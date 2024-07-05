@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
  * 点赞朋友圈的朋友
  * </p>
  *
- * @author 风间影月
+ * @author ZhangBlossom
  * @since 2024-03-27
  */
 @TableName("friend_circle_liked")

@@ -13,7 +13,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
 /**
- * @Auther 风间影月
+ * @Auther ZhangBlossom
  */
 @RestController
 @RequestMapping("friendRequest")

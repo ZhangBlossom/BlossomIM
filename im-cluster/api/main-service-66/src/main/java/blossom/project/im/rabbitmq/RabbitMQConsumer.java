@@ -11,7 +11,7 @@ import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
 
 /**
- * @Auther 风间影月
+ * @Auther ZhangBlossom
  */
 @Component
 @Slf4j

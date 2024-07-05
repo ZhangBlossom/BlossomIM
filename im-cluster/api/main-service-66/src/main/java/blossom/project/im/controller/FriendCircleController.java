@@ -20,7 +20,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 /**
- * @Auther 风间影月
+ * @Auther ZhangBlossom
  */
 @RestController
 @RequestMapping("friendCircle")

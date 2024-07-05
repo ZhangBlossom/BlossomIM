@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
 
 /**
  * ChatServer: Netty 服务的启动类(服务器)
- * @Auther 风间影月
+ * @Auther ZhangBlossom
  */
 public class ChatServer2 {
 

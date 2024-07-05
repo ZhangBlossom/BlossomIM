@@ -7,7 +7,7 @@ import io.minio.UploadObjectArgs;
 import org.junit.jupiter.api.Test;
 
 /**
- * @Auther 风间影月
+ * @Auther ZhangBlossom
  */
 public class MinIOTest {
 

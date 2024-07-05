@@ -15,7 +15,7 @@ import java.util.Map;
 /**
  * 会话管理
  * 用户id和channel的关联处理
- * @Auther 风间影月
+ * @Auther ZhangBlossom
  */
 public class UserChannelSession {
 

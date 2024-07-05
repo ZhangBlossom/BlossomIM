@@ -9,7 +9,7 @@ import blossom.project.im.bo.ModifyUserBO;
  * 用户表 服务类
  * </p>
  *
- * @author 风间影月
+ * @author ZhangBlossom
  * @since 2024-03-27
  */
 public interface UsersService {

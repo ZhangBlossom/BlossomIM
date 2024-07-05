@@ -14,7 +14,7 @@ import blossom.project.im.grace.result.GraceJSONResult;
 import org.springframework.web.bind.annotation.*;
 
 /**
- * @Auther 风间影月
+ * @Auther ZhangBlossom
  */
 @RestController
 @RequestMapping("comment")

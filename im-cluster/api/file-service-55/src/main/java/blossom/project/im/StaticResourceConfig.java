@@ -6,7 +6,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupp
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 /**
- * @Auther 风间影月
+ * @Auther ZhangBlossom
  */
 @Configuration
 public class StaticResourceConfig extends WebMvcConfigurationSupport {

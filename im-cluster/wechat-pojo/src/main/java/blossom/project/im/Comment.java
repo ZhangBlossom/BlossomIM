@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
  * 文章评论表
  * </p>
  *
- * @author 风间影月
+ * @author ZhangBlossom
  * @since 2024-03-27
  */
 public class Comment implements Serializable {

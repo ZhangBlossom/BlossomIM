@@ -1,0 +1,19 @@
+server:
+  tomcat:
+    uri-encoding: UTF-8
+    max-swallow-size: -1  # 不限制请求体大小
+
+spring:
+  application:
+    name: file-service
+  profiles:
+    active: dev
+  servlet:
+    multipart:
+      max-file-size: 500MB      # 文件上传大小的限制
+      max-request-size: 500MB   # 文件最大请求限制
+
+# 日志级别
+logging:
+  level:
+    root: info

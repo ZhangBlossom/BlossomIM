@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
  * 聊天信息存储表
  * </p>
  *
- * @author 风间影月
+ * @author ZhangBlossom
  * @since 2024-03-27
  */
 @TableName("chat_message")

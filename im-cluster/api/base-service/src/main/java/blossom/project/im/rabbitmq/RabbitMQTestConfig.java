@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * RabbitMQ的配置类
- * @Auther 风间影月
+ * @Auther ZhangBlossom
  */
 @Configuration
 public class RabbitMQTestConfig {

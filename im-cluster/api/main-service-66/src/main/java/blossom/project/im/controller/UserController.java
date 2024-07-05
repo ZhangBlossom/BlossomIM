@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.UUID;
 
 /**
- * @Auther 风间影月
+ * @Auther ZhangBlossom
  */
 @RestController
 @RequestMapping("userinfo")

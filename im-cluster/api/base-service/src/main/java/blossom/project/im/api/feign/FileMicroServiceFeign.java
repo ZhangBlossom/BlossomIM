@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 /**
- * @Auther 风间影月
+ * @Auther ZhangBlossom
  */
 @FeignClient(value = "file-service")
 public interface FileMicroServiceFeign {

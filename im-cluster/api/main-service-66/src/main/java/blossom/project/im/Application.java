@@ -7,7 +7,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 
 /**
- * @Auther 风间影月
+ * @Auther ZhangBlossom
  */
 @SpringBootApplication
 @EnableDiscoveryClient  // 开启服务的注册和发现功能

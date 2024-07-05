@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
  * 好友请求记录表
  * </p>
  *
- * @author 风间影月
+ * @author ZhangBlossom
  * @since 2024-03-27
  */
 @TableName("friend_request")

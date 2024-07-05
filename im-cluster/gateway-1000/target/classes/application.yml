@@ -1,0 +1,20 @@
+server:
+  tomcat:
+    uri-encoding: UTF-8
+    max-swallow-size: -1  # 不限制请求体大小
+
+spring:
+  application:
+    name: gateway
+  profiles:
+    active: dev   # dev-开发环境; prod-生产环境; test-测试环境;
+
+# 日志级别
+logging:
+  level:
+    root: info
+
+#blackIp:
+#  continueCounts: 5   # ip连续请求的次数
+#  timeInterval: 15    # ip判断的时间间隔，单位：秒
+#  limitTimes: 25      # 黑名单ip限制的时间，单位：秒

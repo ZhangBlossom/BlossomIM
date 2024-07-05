@@ -5,7 +5,7 @@ import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
 
 /**
- * @Auther 风间影月
+ * @Auther ZhangBlossom
  * Jedis 连接池工具类
  */
 public class JedisPoolUtils {

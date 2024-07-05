@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @Auther 风间影月
+ * @Auther ZhangBlossom
  */
 public class ZookeeperRegister {
 

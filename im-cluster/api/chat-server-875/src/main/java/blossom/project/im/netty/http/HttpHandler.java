@@ -11,7 +11,7 @@ import org.springframework.http.MediaType;
 
 /**
  * 创建自定义助手类
- * @Auther 风间影月
+ * @Auther ZhangBlossom
  */
 // SimpleChannelInboundHandler: 对于请求来说，相当于入站(入境)
 public class HttpHandler extends SimpleChannelInboundHandler<HttpObject> {

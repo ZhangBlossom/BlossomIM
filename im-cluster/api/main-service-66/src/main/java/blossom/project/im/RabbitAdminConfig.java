@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * RabbitAdmin的配置类
- * @Auther 风间影月
+ * @Auther ZhangBlossom
  */
 @Configuration
 public class RabbitAdminConfig {

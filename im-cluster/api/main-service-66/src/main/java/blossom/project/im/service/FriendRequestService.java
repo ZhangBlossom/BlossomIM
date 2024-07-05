@@ -8,7 +8,7 @@ import blossom.project.im.utils.PagedGridResult;
  * 好友请求 服务类
  * </p>
  *
- * @author 风间影月
+ * @author ZhangBlossom
  * @since 2024-03-27
  */
 public interface FriendRequestService {

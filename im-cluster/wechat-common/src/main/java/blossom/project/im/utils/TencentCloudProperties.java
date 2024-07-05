@@ -6,7 +6,7 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
 /**
- * @Auther 风间影月
+ * @Auther ZhangBlossom
  */
 @Component
 @Data

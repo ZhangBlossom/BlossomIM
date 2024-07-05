@@ -31,7 +31,7 @@ import java.util.Objects;
 
 /**
  * 创建自定义助手类
- * @Auther 风间影月
+ * @Auther ZhangBlossom
  */
 // SimpleChannelInboundHandler: 对于请求来说，相当于入站(入境)
 // TextWebSocketFrame: 用于为websocket专门处理的文本数据对象，Frame是数据(消息)的载体

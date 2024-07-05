@@ -16,7 +16,7 @@ import java.util.List;
 
 /**
  * 创建心跳助手类
- * @Auther 风间影月
+ * @Auther ZhangBlossom
  */
 public class HeartBeatHandler extends ChannelInboundHandlerAdapter {
 
