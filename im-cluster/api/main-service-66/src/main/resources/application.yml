@@ -1,0 +1,25 @@
+server:
+  tomcat:
+    uri-encoding: UTF-8
+    max-swallow-size: -1  # 不限制请求体大小
+
+spring:
+  application:
+    name: main-service
+  profiles:
+    active: dev
+
+mybatis-plus:
+  global-config:
+    db-config:
+      id-type: assign_id
+      update-strategy: not_empty
+    banner: false
+  mapper-locations: classpath*:/mappers/*.xml
+#                   classpath*:/mapper/**/*.xml
+
+
+# 日志级别
+logging:
+  level:
+    root: info

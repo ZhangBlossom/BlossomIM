@@ -5,7 +5,7 @@
  Source Server Type    : MySQL
  Source Server Version : 80300 (8.3.0)
  Source Host           : 127.0.0.1:4406
- Source Schema         : wechat-dev
+ Source Schema         : BlossomIM
 
  Target Server Type    : MySQL
  Target Server Version : 80300 (8.3.0)
@@ -13,6 +13,8 @@
 
  Date: 04/06/2024 10:23:45
 */
+create database blossomim;
+use blossomim;
 
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
