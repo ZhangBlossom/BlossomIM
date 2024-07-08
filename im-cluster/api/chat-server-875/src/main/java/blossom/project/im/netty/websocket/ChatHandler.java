@@ -31,6 +31,7 @@ import java.util.Objects;
 
 /**
  * 创建自定义助手类
+ *
  * @Auther ZhangBlossom
  */
 // SimpleChannelInboundHandler: 对于请求来说，相当于入站(入境)
@@ -60,14 +61,13 @@ public class ChatHandler extends SimpleChannelInboundHandler<TextWebSocketFrame>
         // 判断是否黑名单 start
         // 如果双方只要有一方是黑名单，则终止发送
         GraceJSONResult result = OkHttpUtil.get("http://127.0.0.1:1000/friendship/isBlack?friendId1st=" + receiverId
-                                                                + "&friendId2nd=" + senderId);
-        boolean isBlack = (Boolean)result.getData();
+                + "&friendId2nd=" + senderId);
+        boolean isBlack = (Boolean) result.getData();
         System.out.println("当前的黑名单关系为: " + isBlack);
         if (isBlack) {
             return;
         }
         // 判断是否黑名单 end
-
 
 
         // 时间校准，以服务器的时间为准
@@ -119,42 +119,42 @@ public class ChatHandler extends SimpleChannelInboundHandler<TextWebSocketFrame>
             // 发送消息
             // List<Channel> receiverChannels = UserChannelSession.getMultiChannels(receiverId);
             // if (receiverChannels == null || receiverChannels.size() == 0 || receiverChannels.isEmpty()) {
-                // receiverChannels为空，表示用户离线/断线状态，消息不需要发送，后续可以存储到数据库
-                // chatMsg.setIsReceiverOnLine(false);
+            // receiverChannels为空，表示用户离线/断线状态，消息不需要发送，后续可以存储到数据库
+            // chatMsg.setIsReceiverOnLine(false);
             // } else {
             //     chatMsg.setIsReceiverOnLine(true);
 
-                if (Objects.equals(msgType, MsgTypeEnum.VOICE.type)) {
-                    chatMsg.setIsRead(false);
-                }
-                dataContent.setChatMsg(chatMsg);
-                String chatTimeFormat = LocalDateUtils
-                        .format(chatMsg.getChatTime(),
-                                LocalDateUtils.DATETIME_PATTERN_2);
-                dataContent.setChatTime(chatTimeFormat);
-                // UserChannelSession.sendToTarget(receiverChannels, dataContent);
-                MessagePublisher.sendMsgToOtherNettyServer(JsonUtils.objectToJson(dataContent));
+            if (Objects.equals(msgType, MsgTypeEnum.VOICE.type)) {
+                chatMsg.setIsRead(false);
+            }
+            dataContent.setChatMsg(chatMsg);
+            String chatTimeFormat = LocalDateUtils
+                    .format(chatMsg.getChatTime(),
+                            LocalDateUtils.DATETIME_PATTERN_2);
+            dataContent.setChatTime(chatTimeFormat);
+            // UserChannelSession.sendToTarget(receiverChannels, dataContent);
+            MessagePublisher.sendMsgToOtherNettyServer(JsonUtils.objectToJson(dataContent));
 
-                // 当receiverChannels为空不为空的时候，同账户多端设备接受消息
-                // for (Channel c : receiverChannels) {
-                //     Channel findChannel = clients.find(c.id());
-                //     if (findChannel != null) {
-                //
-                //         // if (msgType == MsgTypeEnum.VOICE.type) {
-                //         //     chatMsg.setIsRead(false);
-                //         // }
-                //         // dataContent.setChatMsg(chatMsg);
-                //         // String chatTimeFormat = LocalDateUtils
-                //         //         .format(chatMsg.getChatTime(),
-                //         //                 LocalDateUtils.DATETIME_PATTERN_2);
-                //         // dataContent.setChatTime(chatTimeFormat);
-                //         // 发送消息给在线的用户
-                //         findChannel.writeAndFlush(
-                //                 new TextWebSocketFrame(
-                //                         JsonUtils.objectToJson(dataContent)));
-                //     }
-                //
-                // }
+            // 当receiverChannels为空不为空的时候，同账户多端设备接受消息
+            // for (Channel c : receiverChannels) {
+            //     Channel findChannel = clients.find(c.id());
+            //     if (findChannel != null) {
+            //
+            //         // if (msgType == MsgTypeEnum.VOICE.type) {
+            //         //     chatMsg.setIsRead(false);
+            //         // }
+            //         // dataContent.setChatMsg(chatMsg);
+            //         // String chatTimeFormat = LocalDateUtils
+            //         //         .format(chatMsg.getChatTime(),
+            //         //                 LocalDateUtils.DATETIME_PATTERN_2);
+            //         // dataContent.setChatTime(chatTimeFormat);
+            //         // 发送消息给在线的用户
+            //         findChannel.writeAndFlush(
+            //                 new TextWebSocketFrame(
+            //                         JsonUtils.objectToJson(dataContent)));
+            //     }
+            //
+            // }
             // }
 
             // 把聊天信息作为mq的消息发送给消费者进行消费处理(保存到数据库)
@@ -189,7 +189,6 @@ public class ChatHandler extends SimpleChannelInboundHandler<TextWebSocketFrame>
         // }
 
 
-
         // currentChannel.writeAndFlush(new TextWebSocketFrame(currentChannelId));
 
 
@@ -200,6 +199,7 @@ public class ChatHandler extends SimpleChannelInboundHandler<TextWebSocketFrame>
 
     /**
      * 客户端连接到服务端之后(打开链接)
+     *
      * @param ctx
      * @throws Exception
      */
@@ -215,6 +215,7 @@ public class ChatHandler extends SimpleChannelInboundHandler<TextWebSocketFrame>
 
     /**
      * 关闭连接，移除channel
+     *
      * @param ctx
      * @throws Exception
      */
@@ -233,12 +234,13 @@ public class ChatHandler extends SimpleChannelInboundHandler<TextWebSocketFrame>
         // zk中在线人数累减
         Jedis jedis = JedisPoolUtils.getJedis();
         NettyServerNode minNode = JsonUtils.jsonToPojo(jedis.get(userId),
-                                                       NettyServerNode.class);
+                NettyServerNode.class);
         ZookeeperRegister.decrementOnlineCounts(minNode);
     }
 
     /**
      * 发生异常并且捕获，移除channel
+     *
      * @param ctx
      * @param cause
      * @throws Exception

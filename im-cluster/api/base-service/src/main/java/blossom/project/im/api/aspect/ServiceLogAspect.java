@@ -15,7 +15,7 @@ import org.springframework.util.StopWatch;
 @Aspect
 public class ServiceLogAspect {
 
-    @Around("execution(* blossom.project.service.impl..*.*(..))")
+    @Around("execution(* blossom.project.im.service.impl..*.*(..))")
     public Object recordTimeLog(ProceedingJoinPoint joinPoint) throws Throwable {
 
         // 需要统计每一个service实现的执行时间，如果执行时间太久，则进行error级别的日志输出
