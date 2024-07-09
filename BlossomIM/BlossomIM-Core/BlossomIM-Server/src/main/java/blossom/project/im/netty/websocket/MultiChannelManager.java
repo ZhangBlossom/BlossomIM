@@ -3,7 +3,6 @@ package blossom.project.im.netty.websocket;
 import blossom.project.im.netty.DataContent;
 import blossom.project.im.utils.JsonUtils;
 import io.netty.channel.Channel;
-import io.netty.channel.ChannelId;
 import io.netty.channel.group.ChannelGroup;
 import io.netty.handler.codec.http.websocketx.TextWebSocketFrame;
 
@@ -17,11 +16,11 @@ import java.util.Map;
  * 用户id和channel的关联处理
  * @Auther ZhangBlossom
  */
-public class UserChannelSession {
+public class MultiChannelManager {
 
     // 用于多端同时接受消息，允许同一个账号在多个设备同时在线，比如iPad、iPhone、Mac等设备同时收到消息
     // key: userId, value: 多个用户的channel
-    private static Map<String, List<Channel>> multiSession = new HashMap<>();
+    private static Map<String, List<Channel>> multiChannel = new HashMap<>();
 
     // 用于记录用户id和客户端channel长id的关联关系
     private static Map<String, String> userChannelIdRelation = new HashMap<>();
@@ -41,10 +40,10 @@ public class UserChannelSession {
         }
         channels.add(channel);
 
-        multiSession.put(userId, channels);
+        multiChannel.put(userId, channels);
     }
     public static List<Channel> getMultiChannels(String userId) {
-        return multiSession.get(userId);
+        return multiChannel.get(userId);
     }
 
     public static void removeUselessChannels(String userId, String channelId) {
@@ -61,7 +60,7 @@ public class UserChannelSession {
             }
         }
 
-        multiSession.put(userId, channels);
+        multiChannel.put(userId, channels);
     }
 
     public static List<Channel> getMyOtherChannels(String userId, String channelId) {
@@ -81,24 +80,13 @@ public class UserChannelSession {
     }
 
     public static void outputMulti() {
-
-        System.out.println("++++++++++++++++++");
-
-        for (Map.Entry<String, List<Channel>> entry : multiSession.entrySet()) {
-            System.out.println("----------");
-
+        for (Map.Entry<String, List<Channel>> entry : multiChannel.entrySet()) {
             System.out.println("UserId: " + entry.getKey());
             List<Channel> temp = entry.getValue();
             for (Channel c : temp) {
                 System.out.println("\t\t ChannelId: " + c.id().asLongText());
             }
-
-            System.out.println("----------");
         }
-
-
-        System.out.println("++++++++++++++++++");
-
     }
 
     public static void sendToTarget(List<Channel> receiverChannels, DataContent dataContent) {

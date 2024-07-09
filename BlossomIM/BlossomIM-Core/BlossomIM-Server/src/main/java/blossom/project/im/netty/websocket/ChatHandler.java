@@ -12,7 +12,6 @@ import blossom.project.im.utils.OkHttpUtil;
 import com.a3test.component.idworker.IdWorkerConfigBean;
 import com.a3test.component.idworker.Snowflake;
 import com.baomidou.mybatisplus.core.toolkit.IdWorker;
-import com.rabbitmq.client.MessageProperties;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
@@ -86,8 +85,8 @@ public class ChatHandler extends SimpleChannelInboundHandler<TextWebSocketFrame>
         // 2. 判断消息类型，根据不同的类型来处理不同的业务
         if (Objects.equals(msgType, MsgTypeEnum.CONNECT_INIT.type)) {
             // 当websocket初次open的时候，初始化channel，把channel和用户userid关联起来
-            UserChannelSession.putMultiChannels(senderId, currentChannel);
-            UserChannelSession.putUserChannelIdRelation(currentChannelId, senderId);
+            MultiChannelManager.putMultiChannels(senderId, currentChannel);
+            MultiChannelManager.putUserChannelIdRelation(currentChannelId, senderId);
 
             NettyServerNode minNode = dataContent.getServerNode();
             // System.out.println(minNode);
@@ -117,7 +116,7 @@ public class ChatHandler extends SimpleChannelInboundHandler<TextWebSocketFrame>
 
             // 此处receiverId所对应的channel为空
             // 发送消息
-            // List<Channel> receiverChannels = UserChannelSession.getMultiChannels(receiverId);
+            // List<Channel> receiverChannels = MultiChannelManager.getMultiChannels(receiverId);
             // if (receiverChannels == null || receiverChannels.size() == 0 || receiverChannels.isEmpty()) {
             // receiverChannels为空，表示用户离线/断线状态，消息不需要发送，后续可以存储到数据库
             // chatMsg.setIsReceiverOnLine(false);
@@ -132,7 +131,7 @@ public class ChatHandler extends SimpleChannelInboundHandler<TextWebSocketFrame>
                     .format(chatMsg.getChatTime(),
                             LocalDateUtils.DATETIME_PATTERN_2);
             dataContent.setChatTime(chatTimeFormat);
-            // UserChannelSession.sendToTarget(receiverChannels, dataContent);
+            // MultiChannelManager.sendToTarget(receiverChannels, dataContent);
             MessagePublisher.sendMsgToOtherNettyServer(JsonUtils.objectToJson(dataContent));
 
             // 当receiverChannels为空不为空的时候，同账户多端设备接受消息
@@ -169,9 +168,9 @@ public class ChatHandler extends SimpleChannelInboundHandler<TextWebSocketFrame>
         // dataContent.setChatTime(chatTimeFormat);
         // dataContent.setExtend(currentChannelId);
         //
-        // List<Channel> myOtherChannels = UserChannelSession
+        // List<Channel> myOtherChannels = MultiChannelManager
         //                 .getMyOtherChannels(senderId, currentChannelId);
-        // UserChannelSession.sendToMyOthers(myOtherChannels, dataContent);
+        // MultiChannelManager.sendToMyOthers(myOtherChannels, dataContent);
 
         // for (Channel c : myOtherChannels) {
         //     Channel findChannel = clients.find(c.id());
@@ -194,7 +193,7 @@ public class ChatHandler extends SimpleChannelInboundHandler<TextWebSocketFrame>
 
         // clients.writeAndFlush(new TextWebSocketFrame(currentChannelId));
 
-        UserChannelSession.outputMulti();
+        MultiChannelManager.outputMulti();
     }
 
     /**
@@ -226,8 +225,8 @@ public class ChatHandler extends SimpleChannelInboundHandler<TextWebSocketFrame>
         System.out.println("客户端关闭连接，channel对应的长id为：" + currentChannelId);
 
         // 移除多余的会话
-        String userId = UserChannelSession.getUserIdByChannelId(currentChannelId);
-        UserChannelSession.removeUselessChannels(userId, currentChannelId);
+        String userId = MultiChannelManager.getUserIdByChannelId(currentChannelId);
+        MultiChannelManager.removeUselessChannels(userId, currentChannelId);
 
         clients.remove(currentChannel);
 
@@ -257,8 +256,8 @@ public class ChatHandler extends SimpleChannelInboundHandler<TextWebSocketFrame>
         clients.remove(currentChannel);
 
         // 移除多余的会话
-        String userId = UserChannelSession.getUserIdByChannelId(currentChannelId);
-        UserChannelSession.removeUselessChannels(userId, currentChannelId);
+        String userId = MultiChannelManager.getUserIdByChannelId(currentChannelId);
+        MultiChannelManager.removeUselessChannels(userId, currentChannelId);
 
         // zk中在线人数累减
         Jedis jedis = JedisPoolUtils.getJedis();

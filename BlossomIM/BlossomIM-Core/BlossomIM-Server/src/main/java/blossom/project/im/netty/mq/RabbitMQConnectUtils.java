@@ -1,7 +1,7 @@
 package blossom.project.im.netty.mq;
 
 import blossom.project.im.netty.DataContent;
-import blossom.project.im.netty.websocket.UserChannelSession;
+import blossom.project.im.netty.websocket.MultiChannelManager;
 import blossom.project.im.utils.JsonUtils;
 import com.rabbitmq.client.*;
 
@@ -135,14 +135,14 @@ public class RabbitMQConnectUtils {
 
                     // 广播至集群的其他节点并且发送给用户聊天信息
                     List<io.netty.channel.Channel> receiverChannels =
-                            UserChannelSession.getMultiChannels(receiverId);
-                    UserChannelSession.sendToTarget(receiverChannels, dataContent);
+                            MultiChannelManager.getMultiChannels(receiverId);
+                    MultiChannelManager.sendToTarget(receiverChannels, dataContent);
 
                     // 广播至集群的其他节点并且同步给自己其他设备聊天信息
                     String currentChannelId = dataContent.getExtend();
                     List<io.netty.channel.Channel> senderChannels =
-                            UserChannelSession.getMyOtherChannels(senderId, currentChannelId);
-                    UserChannelSession.sendToTarget(senderChannels, dataContent);
+                            MultiChannelManager.getMyOtherChannels(senderId, currentChannelId);
+                    MultiChannelManager.sendToTarget(senderChannels, dataContent);
                 }
             }
         };

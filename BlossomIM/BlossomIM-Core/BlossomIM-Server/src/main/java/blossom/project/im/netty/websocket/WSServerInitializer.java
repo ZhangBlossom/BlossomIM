@@ -46,11 +46,9 @@ public class WSServerInitializer extends ChannelInitializer<SocketChannel> {
                                 8,
                                 10,
                                 300 * 60));
-        pipeline.addLast(new HeartBeatHandler());
 
         // ==================== 增加心跳支持 end ====================
-
-
+        pipeline.addLast(new HeartBeatHandler());
 
         // ==================== 以下是用于支持websocket ====================
 
