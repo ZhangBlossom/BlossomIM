@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/im-cluster/api/auth-service-88/BlossomIM-Auth.iml" filepath="$PROJECT_DIR$/im-cluster/api/auth-service-88/BlossomIM-Auth.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/BlossomIM-Backend.iml" filepath="$PROJECT_DIR$/.idea/BlossomIM-Backend.iml" />
-      <module fileurl="file://$PROJECT_DIR$/im-cluster/api/auth-service-88/auth-service-88.iml" filepath="$PROJECT_DIR$/im-cluster/api/auth-service-88/auth-service-88.iml" />
-      <module fileurl="file://$PROJECT_DIR$/im-cluster/gateway-1000/gateway-1000.iml" filepath="$PROJECT_DIR$/im-cluster/gateway-1000/gateway-1000.iml" />
+      <module fileurl="file://$PROJECT_DIR$/im-cluster/gateway-1000/BlossomIM-Gateway.iml" filepath="$PROJECT_DIR$/im-cluster/gateway-1000/BlossomIM-Gateway.iml" />
     </modules>
   </component>
 </project>

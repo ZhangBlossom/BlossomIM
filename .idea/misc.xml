@@ -133,6 +133,7 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/im-cluster/pom.xml" />
+        <option value="$PROJECT_DIR$/BlossomIM/pom.xml" />
       </list>
     </option>
   </component>

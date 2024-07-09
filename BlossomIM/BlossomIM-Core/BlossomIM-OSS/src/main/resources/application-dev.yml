@@ -1,0 +1,23 @@
+server:
+  port: 55
+
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:18848
+#        username: nacos
+#        password: nacos
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5682
+    username: BlossomIM
+    password: BlossomIM
+    virtual-host: BlossomIM
+
+minio:
+  endpoint: http://127.0.0.1:8000     # MinIO服务地址
+  fileHost: http://127.0.0.1:8000     # 文件地址host
+  bucketName: wechat                  # 存储桶bucket名称
+  accessKey: BlossomIM                    # 用户名
+  secretKey: BlossomIM123456              # 密码

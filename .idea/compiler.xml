@@ -7,27 +7,31 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="main-service-66" />
-        <module name="wechat-common" />
-        <module name="auth-service-88" />
-        <module name="chat-server-875" />
-        <module name="gateway-1000" />
-        <module name="base-service" />
-        <module name="file-service-55" />
-        <module name="wechat-pojo" />
+        <module name="BlossomIM-Base" />
+        <module name="BlossomIM-Func" />
+        <module name="BlossomIM-Gateway" />
+        <module name="BlossomIM-Server" />
+        <module name="BlossomIM-OSS" />
+        <module name="BlossomIM-Common" />
+        <module name="BlossomIM-Auth" />
+        <module name="BlossomIM-Entity" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="chat-server-875 (1)" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="auth-service-88" options="-parameters" />
-      <module name="base-service" options="-parameters" />
-      <module name="chat-server-875" options="-parameters" />
-      <module name="file-service-55" options="-parameters" />
-      <module name="gateway-1000" options="-parameters" />
-      <module name="main-service-66" options="-parameters" />
-      <module name="wechat-common" options="-parameters" />
-      <module name="wechat-pojo" options="-parameters" />
+      <module name="BlossomIM-Auth" options="-parameters" />
+      <module name="BlossomIM-Base" options="-parameters" />
+      <module name="BlossomIM-Common" options="-parameters" />
+      <module name="BlossomIM-Entity" options="-parameters" />
+      <module name="BlossomIM-Func" options="-parameters" />
+      <module name="BlossomIM-Gateway" options="-parameters" />
+      <module name="BlossomIM-OSS" options="-parameters" />
+      <module name="BlossomIM-Server" options="-parameters" />
+      <module name="chat-server-875 (1)" options="" />
     </option>
   </component>
 </project>

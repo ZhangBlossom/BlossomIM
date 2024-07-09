@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8">
-    <file url="file://$PROJECT_DIR$/im-cluster/api/auth-service-88/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/im-cluster/api/base-service/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/im-cluster/api/chat-server-875/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/im-cluster/api/file-service-55/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/im-cluster/api/main-service-66/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/im-cluster/api/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/im-cluster/api/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/im-cluster/gateway-1000/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/im-cluster/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/im-cluster/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/im-cluster/wechat-common/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/im-cluster/wechat-pojo/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/BlossomIM/BlossomIM-Common/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/BlossomIM/BlossomIM-Core/BlossomIM-Auth/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/BlossomIM/BlossomIM-Core/BlossomIM-Base/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/BlossomIM/BlossomIM-Core/BlossomIM-Func/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/BlossomIM/BlossomIM-Core/BlossomIM-OSS/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/BlossomIM/BlossomIM-Core/BlossomIM-Server/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/BlossomIM/BlossomIM-Core/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/BlossomIM/BlossomIM-Core/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/BlossomIM/BlossomIM-Entity/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/BlossomIM/BlossomIM-Gateway/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/BlossomIM/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/BlossomIM/src/main/resources" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>
